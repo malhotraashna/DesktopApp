@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="navbar-fixed-left.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+            function installClick() {
+                var electron = require('electron');
+                const {ipcRenderer} = electron;
+                var btn = document.getElementById('installButton');
+                btn.addEventListener('click', function () {
+                    ipcRenderer.send('asynchronous-message', 'ping');
+    
+                    ipcRenderer.on('asynchronous-reply', (event, arg) => {
+                        console.log(`reply : ${arg}`);
+                    })
+                    /*ipcRenderer.once('synchronous-message', function(){
+                        console.log('display');
+                    });*/
+                    //const reply = ipcRenderer.sendSync('synchronous-message', 'ping');
+                    //console.log(`reply : ${reply}`);
+                });
+            }
+        </script>
+</head>
+<style>
+    .size {
+        font-size: 30px;
+    }
+
+    .setWidth {
+        width: 150px;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black !important;
+    }
+
+    footer {
+        bottom: 0 !important;
+    }
+
+    body {
+        padding-top: 120px;
+        height: 100%;
+        padding-bottom: 120px;
+    }
+</style>
+
+<body>
+    <header class="fixed-top">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h1>
+                    <center>AppirioDX</center>
+                </h1>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-3">
+
+                <nav class="navbar bg-dark navbar-dark" data-spy="affix">
+
+                    <ul class="navbar-nav">
+                        <li>
+                            <br>
+                            <br>
+                            <img src="C:\Users\Appirio-7933\Desktop\Dixie.png" class="img-rounded" width="140px" height="140px">
+                            <br>
+                            <br>
+                            <br>
+
+                        </li>
+                        <li class="nav-item active size">
+                            <a class="nav-link" href="#">Tools
+                                <span class="badge">3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item size">
+                            <a class="nav-link" href="#">Services </a>
+                        </li>
+                        <li class="nav-item size">
+                            <a class="nav-link" href="#">Config
+                                <span class="badge">2</span>
+                            </a>
+                        </li>
+                        <li class="nav-item size">
+                            <a class="nav-link " href="#">Projects</a>
+                        </li>
+                    </ul>
+                </nav>
+
+
+            </div>
+            <div class="col-sm-9">
+                <div class="container-fluid">
+                    <div id="demo" class="carousel slide " data-ride="carousel">
+
+                        <!-- Indicators -->
+                        <ul class="carousel-indicators">
+                            <li data-target="#demo" data-slide-to="0" class="active"></li>
+                            <li data-target="#demo" data-slide-to="1"></li>
+                            <li data-target="#demo" data-slide-to="2"></li>
+                            <li data-target="#demo" data-slide-to="3"></li>
+                        </ul>
+
+                        <!-- The slideshow -->
+                        <div class="carousel-inner" style="background-color:#C098F3">
+                            <div class="carousel-item ">
+                                <center>
+
+                                    <div class="card" style="width:300px;">
+                                        <img class="card-img-top" src="C:\Users\Appirio-7933\Desktop\vscode_256x256.png" alt="VS Code" height="140px">
+                                        <div class="card-body">
+                                            <div class="panel panel-primary">
+                                                <div class="panel-heading">
+                                                    <h4 class="card-title">VS Code</h4>
+                                                    <p class="card-text">Edit your code your way!</p>
+
+                                                </div>
+                                            </div>
+                                </center>
+                                </div>
+                                <div class="carousel-item active">
+                                    <center>
+                                        <!--<img src="C:\Users\Appirio-7933\Desktop\git.jpg" alt="GIT" height="140px">
+                                    <div class="carousel-caption">
+                                            <h3>GIT</h3>
+                                            <p>Learn how to version your app.</p>
+                                          </div>-->
+                                        <div class="card" style="width:300px">
+                                            <img class="card-img-top" src="C:\Users\Appirio-7933\Desktop\git.jpg" alt="Card image" height="140px">
+                                            <div class="card-body">
+                                                <div class="panel panel-primary">
+                                                    <div class="panel-heading">
+                                                        <h4 class="card-title">GIT</h4>
+                                                        <p class="card-text">Learn how to version your app.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <center>
+                                        <div class="card" style="width:300px">
+                                            <img class="card-img-top" src="C:\Users\Appirio-7933\Desktop\nodejs.png" alt="Card image" height="140px">
+                                            <div class="card-body">
+                                                <div class="panel panel-primary">
+                                                    <div class="panel-heading">
+                                                        <h4 class="card-title">Node</h4>
+                                                        <p class="card-text">Let's work with the server!</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="carousel-item">
+                                    <center>
+
+
+                                        <div class="card" style="width:300px">
+                                            <img class="card-img-top" src="C:\Users\Appirio-7933\Desktop\sourcetree.jpg" alt="Card image" height="140px">
+                                            <div class="card-body">
+                                                <div class="panel panel-primary">
+                                                    <div class="panel-heading">
+                                                        <h4 class="card-title">SourceTree</h4>
+                                                        <p class="card-text">Don't worry about your code. It's safe with us.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+                                </div>
+
+                                <!-- Left and right controls -->
+                                <a class="carousel-control-prev bg-dark" href="#demo" data-slide="prev">
+                                    <span class="carousel-control-prev-icon "></span>
+                                </a>
+                                <a class="carousel-control-next bg-dark" href="#demo" data-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </a>
+
+                            </div>
+
+                            <div>
+                                <br>
+                                <br>
+                                <button type="button" class="btn btn-info btn-lg setWidth">Accept All</button>
+                                <button type="button" class="btn btn-warning float-right btn-lg setWidth">Ignore All</button>
+                            </div>
+                            <br>
+
+
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr class="active">
+                                        <th>
+                                            <h4>
+                                                <b>
+                                                    <center>RECOMMENDATION</center>
+                                                </b>
+                                            </h4>
+                                        </th>
+                                        <th>
+                                            <h4>
+                                                <b>
+                                                    <center>TOOL</center>
+                                                </b>
+                                            </h4>
+                                        </th>
+                                        <th>
+                                            <h4>
+                                                <b>
+                                                    <center>STATUS</center>
+                                                </b>
+                                            </h4>
+                                        </th>
+                                        <th>
+                                            <h4>
+                                                <b>
+                                                    <center>OVERRIDE</center>
+                                                </b>
+                                            </h4>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <center>
+                                                <img src="C:\Users\Appirio-7933\Desktop\greenTick.png" class="img-rounded" width="30px" height="30px">
+                                            </center>
+                                        </td>
+                                        <td>Node</td>
+                                        <td>v8.6.3 Installed</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="danger">
+                                        <td>
+                                            <center>
+                                                <button type="button" class="btn btn-info">[Upgrade to v4]</button>
+                                            </center>
+                                        </td>
+                                        <td>Choco/Brew</td>
+                                        <td>v3.1 Installed</td>
+                                        <td>
+                                            <center>
+                                                <button type="button" class="btn btn-warning">[Ignore]</button>
+                                            </center>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <center>
+                                                <img src="C:\Users\Appirio-7933\Desktop\greenTick.png" class="img-rounded" width="30px" height="30px">
+                                            </center>
+                                        </td>
+                                        <td>Git</td>
+                                        <td>v2.0 Installed</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="danger">
+                                        <td>
+                                            <center>
+                                                <button type="button" class="btn btn-info" id="installButton" onclick="installClick();return false;">[Install]</button>
+                                            </center>
+                                        </td>
+                                        <td>VS Code</td>
+                                        <td>Not Installed</td>
+                                        <td>
+                                            <center>
+                                                <button type="button" class="btn btn-warning">[Ignore]</button>
+                                            </center>
+                                        </td>
+                                    </tr>
+                                    <tr class="danger">
+                                        <td>
+                                            <center>
+                                                <button type="button" class="btn btn-info">[Install]</button>
+                                            </center>
+                                        </td>
+                                        <td>Source Tree</td>
+                                        <td>Not Installed</td>
+                                        <td>
+                                            <center>
+                                                <button type="button" class="btn btn-warning">[Ignore]</button>
+                                            </center>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="fixed-bottom bg-primary">
+
+                <h1>
+                    <center>The new tool to enhance your experience !!</center>
+                </h1>
+
+
+            </footer>
+
+</body>
+
+</html>
